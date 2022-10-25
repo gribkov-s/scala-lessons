@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ScalaCompilerConfiguration">
+    <profile name="sbt 1" modules="scalalessons" />
+    <profile name="sbt 2" modules="ScalaLessons">
+      <option name="implicitConversions" value="true" />
+      <option name="deprecationWarnings" value="true" />
+      <parameters>
+        <parameter value="-Ymacro-annotations" />
+      </parameters>
+      <plugins>
+        <plugin path="C:\Users\0\.ivy2\cache\org.typelevel\kind-projector_2.13\jars\kind-projector_2.13-0.10.3.jar" />
+      </plugins>
+    </profile>
+  </component>
+</project>

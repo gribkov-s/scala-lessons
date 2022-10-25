@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: org.glassfish.jersey.ext:jersey-entity-filtering:2.25.1:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.glassfish.jersey.ext/jersey-entity-filtering/jars/jersey-entity-filtering-2.25.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.glassfish.jersey.ext/jersey-entity-filtering/srcs/jersey-entity-filtering-2.25.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
