@@ -11,13 +11,14 @@ object ImplicitConversionsProblem {
 
   def main(args: Array[String]): Unit = {
 
-    val a = 21
-    val b = "2 1 "
-    val c = "1xyz"
+    val a = 42
+    val b = "4 2 "
+    val c = "4 2 a"
 
     val sum = a + b.toIntWithReplace + c.toIntWithReplace
 
     println(sum)
+    //Exception in thread "main" java.lang.NumberFormatException: For input string: "42a"
   }
 
 }

@@ -9,8 +9,6 @@ object ImplicitScopes {
     override def print(value: Number): Unit = println(value + ": Printer from local scope")
   }
 
-  //import implicits.datatalks2022.scopes._
-
   def main(args: Array[String]): Unit = {
 
     val num = Number(42)

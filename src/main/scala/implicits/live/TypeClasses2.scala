@@ -33,7 +33,7 @@ object TypeClasses2 {
           val data = Map(
             "date" -> dateUnix,
             "code" -> "%03d".format(entity.code),
-            "name" -> entity.name.toUpperCase,
+            "name" -> entity.name.take(3).toUpperCase,
             "rate" -> entity.rate
           )
           JSONObject(data).toString()
@@ -41,10 +41,10 @@ object TypeClasses2 {
       }
   }
 
-  implicit class JsonEncoderSyntax[T: JsonEncoder](entity: T) {
-    //def toJson(implicit enc: JsonEncoder[T]): String = enc.encode(entity) //with implicit parameter
+  implicit class JsonEncoderSyntax[T : JsonEncoder](entity: T) {
+    def toJson(implicit enc: JsonEncoder[T]): String = enc.encode(entity) //with implicit parameter
     //def toJson: String = JsonEncoder[T].encode(entity) //with summoner and context bound
-    def toJson: String = implicitly[JsonEncoder[T]].encode(entity) // with implicitly and context bound
+    //def toJson: String = implicitly[JsonEncoder[T]].encode(entity) // with implicitly and context bound
   }
 
   def main(args: Array[String]): Unit = {

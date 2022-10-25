@@ -1,14 +1,14 @@
 package implicits.live
 
 import org.apache.log4j.{Level, Logger}
-import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.{DataFrame, SparkSession}
 
 object ImplicitsParameters {
 
-  def readCsv(path: String, header: Boolean)(implicit spark: SparkSession) =
+  def readCsv(path: String, header: Boolean)(implicit spark: SparkSession): DataFrame =
     spark.read.option("header", header).csv(path)
 
-  def readJson(path: String)(implicit spark: SparkSession) =
+  def readJson(path: String)(implicit spark: SparkSession): DataFrame =
     spark.read.json(path)
 
 

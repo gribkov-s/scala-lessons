@@ -35,7 +35,7 @@ object TypeClasses1 {
           val data = Map(
             "date" -> dateUnix,
             "code" -> "%03d".format(entity.code),
-            "name" -> entity.name.toUpperCase,
+            "name" -> entity.name.take(3).toUpperCase,
             "rate" -> entity.rate
           )
           JSONObject(data).toString()
