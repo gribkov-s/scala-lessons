@@ -9,7 +9,7 @@ import org.apache.spark.sql.avro.SchemaConverters
 object ImplicitConversions {
 
   class DfAvroSchema(df: DataFrame) {
-    def getAvroSchema(name: String, nameSpace: String, recName: String): Schema =
+    def getAvroSchema(nameSpace: String, recName: String): Schema =
       SchemaConverters.toAvroType(df.schema, recordName = recName, nameSpace = nameSpace)
   }
 
@@ -30,7 +30,7 @@ object ImplicitConversions {
     val currencyRatesDf = currencyRates.toDF()
 
     val avroSchema =
-      currencyRatesDf.getAvroSchema("rates", "currency", "currency_rates_rec")
+      currencyRatesDf.getAvroSchema("currency", "currency_rates_rec")
 
     println(avroSchema.toString(true))
 

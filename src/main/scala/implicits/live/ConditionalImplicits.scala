@@ -11,7 +11,7 @@ import org.apache.spark.sql.avro.SchemaConverters
 object ConditionalImplicits {
 
   class DfAvroSchema(df: DataFrame) {
-    def getAvroSchema(name: String, nameSpace: String, recName: String): Schema =
+    def getAvroSchema(nameSpace: String, recName: String): Schema =
       SchemaConverters.toAvroType(df.schema, recordName = recName, nameSpace = nameSpace)
   }
 
@@ -36,7 +36,7 @@ object ConditionalImplicits {
     implicit val client: SchemaRegistryClient = new SchemaRegistryClient(clientConfig.asJava)
 
     val avroSchema =
-      currencyRatesDf.getAvroSchema("rates", "currency", "currency_rates_rec")
+      currencyRatesDf.getAvroSchema("currency", "currency_rates_rec")
 
     println(avroSchema.toString(true))
   }
